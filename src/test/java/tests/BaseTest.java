@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.FramePage;
 import pages.InventoryPage;
 import pages.LoginPage;
 
@@ -22,9 +23,9 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        loginPage = new LoginPage(driver);
-        InventoryPage = new InventoryPage(driver);
-
+        LoginPage LoginPage = new LoginPage(driver);
+        InventoryPage InventoryPage = new InventoryPage(driver);
+        FramePage FramePage = new FramePage(driver);
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
