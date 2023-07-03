@@ -25,7 +25,7 @@ public class BaseTest {
 
         LoginPage LoginPage = new LoginPage(driver);
         InventoryPage InventoryPage = new InventoryPage(driver);
-        FramePage FramePage = new FramePage(driver);
+
     }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
