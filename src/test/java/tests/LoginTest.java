@@ -34,3 +34,4 @@ public class LoginTest extends BaseTest{
         assertEquals(loginPage.getErrorMessage(),"Epic sadface: Sorry, this user has been locked out","Текст сообщения неверный или отсутствует");
     }
 }
+

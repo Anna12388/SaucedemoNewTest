@@ -5,19 +5,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import pages.InventoryPage;
 import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
-
+@Listeners(TestListener.class)
 public class BaseTest {
-    WebDriver driver;
-    LoginPage loginPage;
-    InventoryPage inventoryPage;
+    protected WebDriver driver;
+    protected LoginPage loginPage;
+    protected InventoryPage inventoryPage;
 
 
     @Parameters({"browser"})
@@ -37,7 +34,9 @@ public class BaseTest {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        testContext.setAttribute( % "driver", driver);
+
+
+        testContext.setAttribute("driver", driver);
 
         loginPage = new LoginPage(driver);
         inventoryPage = new InventoryPage(driver);
